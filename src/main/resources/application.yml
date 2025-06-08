@@ -1,0 +1,17 @@
+# สำหรับกำหนดค่า rate limiting
+rate-limit:
+  default:
+    requests-per-minute: 100
+    burst-capacity: 20
+  api:
+    requests-per-minute: 200
+  admin:
+    requests-per-minute: 10
+  public:
+    requests-per-minute: 500
+
+# Caffeine cache configuration
+spring:
+  cache:
+    caffeine:
+      spec: maximumSize=10000,expireAfterWrite=10m
